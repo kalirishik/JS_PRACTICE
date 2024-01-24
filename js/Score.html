@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function CalcScore(){
+            let v=document.getElementById("score").value;
+            let r=document.getElementById("result");
+            if( v>=80 && v<=100){
+                r.textContent="Best";
+                r.style.color="green"
+            }
+            else if( v>=60 && v<=79){
+                r.textContent="Good";
+                r.style.color="blue"
+            }
+            else if( v>=50 && v<=59){
+                r.textContent="Better";
+                r.style.color="orange"
+            }
+            if( v<50 || v>100){
+                r.textContent="Not Elgibile";
+                r.style.color="red"
+            }
+        }
+    </script>
+</head>
+<body>
+    Enter a Score : <input type="number" oninput="CalcScore()" id="score">
+    <h3 id="result"></h3>
+</body>
+</html>

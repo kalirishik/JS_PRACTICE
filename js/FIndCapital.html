@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country & Capital</title>
+    <style>
+        #capital{
+            color: red;
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color:green">SELECT THE COUNTRY NAME TO FIND ITS CAPITAL</h2><br>
+    Select Country<select id="country" onchange="changeCapital()">
+        <option value="" disabled selected>Select a Country</option>
+        <option value="india">India</option>
+        <option value="Australia">Australia</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="America">America</option>
+        <option value="Germany">Germany</option>
+    </select>
+    <br> Capital <input type="text" id="capital" readonly>
+    
+    <script>
+        function changeCapital() {
+            var countrySelect = document.getElementById("country");
+            var capitalInput = document.getElementById("capital");
+
+            
+            var selectedCountry = countrySelect.value;
+
+            
+            var capitalMap = {
+                "india": "New Delhi",
+                "Australia": "Canberra",
+                "United Kingdom": "London",
+                "America": "Washington, D.C.",
+                "Germany": "Berlin"
+            };
+
+            
+            capitalInput.value = capitalMap[selectedCountry];
+        }
+    </script>
+</body>
+</html>

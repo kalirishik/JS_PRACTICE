@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication & Division</title>
+</head>
+<body>
+    <form>
+        1st Number: <input type="text" id="n1"><br><br>
+        2nd Number: <input type="text" id="n2"><br><br>
+        <button onclick="calculate('multiply'); return false;">Multiply</button>
+        <button onclick="calculate('divide'); return false;">Divide</button><br>
+        <h3 id="display"></h3>
+    </form>
+
+    <script defer>
+        function calculate(operation) {
+            var n1 = parseFloat(document.getElementById("n1").value);
+            var n2 = parseFloat(document.getElementById("n2").value);
+            var displayElement = document.getElementById("display");
+
+            if (isNaN(n1) || isNaN(n2)) {
+                displayElement.innerText = "Invalid input. Please enter valid numbers.";
+                return;
+            }
+
+            switch (operation) {
+                case 'multiply':
+                    displayElement.innerText = `Multiplication of ${n1} and ${n2} is ${n1 * n2}`;
+                    break;
+                case 'divide':
+                    if (n2 === 0) {
+                        displayElement.innerText = "Cannot divide by zero";
+                    } else {
+                        displayElement.innerText = `Division of ${n1} and ${n2} is ${n1 / n2}`;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

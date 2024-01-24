@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="aqua" id="back-color">
+    <center>
+            <h1>BACKGROUND COLOR CHANGER</h1>
+            <button onclick="changeColor('red')">RED</button>
+            <button onclick="changeColor('green')">GREEN</button>
+            <button onclick="changeColor('blue')">BLUE</button>
+    </center>
+    <script>
+        function changeColor(x){
+            let c=document.getElementById("back-color");
+            c.style.backgroundColor=x;
+        }
+    </script>
+</body>
+</html>

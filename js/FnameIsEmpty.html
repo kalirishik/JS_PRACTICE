@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input validate</title>
+    <script>
+        function Validate() {
+            var fname = document.forms[0].elements["fname"].value;
+            if (fname.trim() === "") {
+                alert("Name cannot be empty");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return Validate()">
+        Name :<input type="text" name="fname">
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
